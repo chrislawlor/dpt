@@ -24,10 +24,11 @@ Getting Started
 ---------------
 
 * Install Django 1.5
-* django-admin.py startproject --template https://github.com/chrislawlor/dpt/tarball/master YOURPROJECTNAME
+* ``django-admin.py startproject --template https://github.com/chrislawlor/dpt/tarball/master YOURPROJECTNAME``
 * Follow instructions below.
 
 {% endif %}
+
 {{ project_name|upper }}
 ========================
 
@@ -60,7 +61,7 @@ Install development requirements with::
 
     pip install -r requirements/local.txt
     
-*NOTE* After the first time installing requirements, be sure to go back and add
+*NOTE:* After the first time installing requirements, be sure to go back and add
 version numbers for all the installed libraries. Do *NOT* leave unversioned
 items in a requirements file!
     
@@ -95,7 +96,7 @@ a ``SECRET_KEY``.
 
 .. _this secret key generator: http://www.miniwebtool.com/django-secret-key-generator/
 
-**NOTE** Be sure to keep a backup copy of the ``SECRET_KEY`` used in production!!
+**NOTE:** Be sure to keep a backup copy of the ``SECRET_KEY`` used in production!!
 
 Here is a list of the required environment variables:
 
@@ -138,7 +139,7 @@ Prototype uses South_ to manage database migrations.
 ::
     make db
 
-*NOTE*: If you've set the ``DJANGO_SETTINGS_MODULE`` environment variable,
+**NOTE:** If you've set the ``DJANGO_SETTINGS_MODULE`` environment variable,
 you can omit the ``--settings=...`` portion of any ``manage.py`` commands.
 
 Start the Development Server
@@ -160,7 +161,9 @@ must be compiled to CSS. The ``Makefile`` default build target will invoke the
 ``lessc`` compiler.
 
 .. _LESS: http://lesscss.org/
-
+    
+    ::
+    
     make
 
 To avoid having to run ``make`` constantly, running::
@@ -180,7 +183,7 @@ To run project tests and generate a coverage report, run::
 
     make test
 
-Open htmlcov/index.html in your browser to view the coverage report.
+Open ``htmlcov/index.html`` in your browser to view the coverage report.
 
 
 Deploying
