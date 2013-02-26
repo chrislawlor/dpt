@@ -162,7 +162,7 @@ must be compiled to CSS. The ``Makefile`` default build target will invoke the
 
 .. _LESS: http://lesscss.org/
     
-::
+To compile static assets::
     
     make
 
