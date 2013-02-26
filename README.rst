@@ -61,7 +61,7 @@ Install development requirements with::
 
     pip install -r requirements/local.txt
     
-*NOTE:* After the first time installing requirements, be sure to go back and add
+**NOTE:** After the first time installing requirements, be sure to go back and add
 version numbers for all the installed libraries. Do *NOT* leave unversioned
 items in a requirements file!
     
@@ -122,7 +122,7 @@ Set the contents as follows::
     export {{ project_name|upper }}_DATABASE_USER="";
     export {{ project_name|upper }}_DATABASE_PASSWORD="";
     export {{ project_name|upper }}_SECRET_KEY="";
-    
+    export DJANGO_SETTINGS_MODULE="project.settings.local";
 
 The last line, which sets``DJANGO_SETTINGS_MODULE`` to ``project.settings.local``,
 is not strictly necessary, but helpful to avoid the need for the
@@ -137,6 +137,7 @@ Prototype uses South_ to manage database migrations.
 .. _South: http://south.aeracode.org/
 
 ::
+
     make db
 
 **NOTE:** If you've set the ``DJANGO_SETTINGS_MODULE`` environment variable,
