@@ -28,6 +28,7 @@ Getting Started
 * Follow instructions below.
 
 {% endif %}
+
 {{ project_name|upper }}
 ========================
 
@@ -160,7 +161,9 @@ must be compiled to CSS. The ``Makefile`` default build target will invoke the
 ``lessc`` compiler.
 
 .. _LESS: http://lesscss.org/
-
+    
+    ::
+    
     make
 
 To avoid having to run ``make`` constantly, running::
@@ -180,7 +183,7 @@ To run project tests and generate a coverage report, run::
 
     make test
 
-Open htmlcov/index.html in your browser to view the coverage report.
+Open ``htmlcov/index.html`` in your browser to view the coverage report.
 
 
 Deploying
