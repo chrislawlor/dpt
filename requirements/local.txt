@@ -1,0 +1,20 @@
+# Local requirements file.
+# Place items here that should ONLY be installed in DEVELOPMENT environments.
+
+# include the base requirements file
+-r _base.txt
+
+django-debug-toolbar
+django-extensions
+
+# For easy deployments
+# http://docs.fabfile.org/en/latest/
+Fabric
+
+# For building documentation
+# http://sphinx-doc.org/
+Sphinx
+
+# For running tests
+coverage
+django-discover-runner

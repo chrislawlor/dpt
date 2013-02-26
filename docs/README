@@ -1,0 +1,11 @@
+This folder will hold documentation written for {{ project_name }} users.
+
+To get started, first install the dev requirements with:
+
+    pip install -r requirements/local.txt
+
+Then, cd to this directory and run:
+
+    sphinx-quickstart
+
+Be sure to say 'yes' to the 'autodoc' extension.

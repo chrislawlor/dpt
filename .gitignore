@@ -1,0 +1,64 @@
+# Python
+*.py[cod]
+
+# Project
+/prototype/static/_build
+
+# Common IDEs
+*.swp
+.idea/
+.buildpath
+.project
+.settings
+atlassian-ide-plugin.xml
+
+# Virtualenv
+*-env/
+
+# Sqlite
+*.sqlite
+
+#######################################
+#####   From HTML5 Boilerplate   ######
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools
+.idea
+
+# Dreamweaver added files
+_notes
+dwsync.xml
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+
+# Unit test / coverage reports
+.coverage
+htmlcov/
+.tox
+nosetests.xml

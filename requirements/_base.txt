@@ -1,0 +1,36 @@
+# Base requirements file.
+# Place items here that should be installed in ALL environments.
+
+# Django
+# Add your django version here
+
+## Needed by the settings base module. Do not remove.
+Unipath==0.2.1
+South==0.7.6
+
+#####################################################
+#
+# Below are some commonly used django apps, included
+# here for convenience.
+# Be sure to add version numbers here!!!!
+#
+#####################################################
+
+# Convenient utilities for Django Models
+# https://github.com/carljm/django-model-utils
+# django-model-utils
+
+# PostgreSQL Database Adapter
+# psycopg2
+
+# The missing pieces to Django CBV
+# http://django-braces.readthedocs.org/en/latest/index.html
+# django-braces
+
+# Programmatically define form layouts
+# http://django-crispy-forms.readthedocs.org/en/latest/
+# django-crispy-forms
+
+# Adds HTML 5 form attributes to Django forms
+# http://django-floppyforms.readthedocs.org/en/latest/ 
+# django-floppyforms
