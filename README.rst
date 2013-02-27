@@ -124,7 +124,7 @@ Set the contents as follows::
     export {{ project_name|upper }}_SECRET_KEY="";
     export DJANGO_SETTINGS_MODULE="project.settings.local";
 
-The last line, which sets``DJANGO_SETTINGS_MODULE`` to ``project.settings.local``,
+The last line, which sets ``DJANGO_SETTINGS_MODULE`` to ``project.settings.local``,
 is not strictly necessary, but helpful to avoid the need for the
 ``--settings`` flag to django management commands.
 
