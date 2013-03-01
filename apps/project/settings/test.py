@@ -18,3 +18,6 @@ DATABASES = {
         "PORT": "",
     },
 }
+
+# Don't run migrations for unit tests
+SOUTH_TESTS_MIGRATE = False
