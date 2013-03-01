@@ -150,6 +150,10 @@ Start the Development Server
 
     make server
 
+Now `bask in the glory`_ of all the hard work you didn't have to do to get this far!
+
+.. _bask in the glory: http://localhost:8000/
+
     
 Editing Static Assets
 ~~~~~~~~~~~~~~~~~~~~~
