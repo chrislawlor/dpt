@@ -51,7 +51,7 @@ Set up a virtual environment. Virtualenvwrapper_ is highly recommended.
 
 ::
 
-    mkvirtualenv prototype
+    mkvirtualenv {{ project_name }}
 
 The development requirements are defined in the ``requirements`` folder. Note that
 these are divided into separate requirements for production and local development.
