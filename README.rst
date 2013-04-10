@@ -129,10 +129,26 @@ is not strictly necessary, but helpful to avoid the need for the
 ``--settings`` flag to django management commands.
 
 
+Running ``manage.py`` commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Django's ``manage.py`` script is located in the ``apps`` directory. Any
+``manage.py`` command can be run as follows::
+
+    python apps/manage.py --settings=project.settings.local COMMAND
+
+
+**NOTE:** If you've set the ``DJANGO_SETTINGS_MODULE`` environment variable,
+you can omit the ``--settings=...`` portion of any ``manage.py`` commands.
+
+For convenience, {{ project_name|capfirst }} provides makefile targets for most
+common ``manage.py`` commands. 
+
+
 Initialize Your Database
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Prototype uses South_ to manage database migrations.
+{{ project_name|capfirst }} uses South_ to manage database migrations.
 
 .. _South: http://south.aeracode.org/
 
@@ -140,8 +156,6 @@ Prototype uses South_ to manage database migrations.
 
     make db
 
-**NOTE:** If you've set the ``DJANGO_SETTINGS_MODULE`` environment variable,
-you can omit the ``--settings=...`` portion of any ``manage.py`` commands.
 
 Start the Development Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
