@@ -5,6 +5,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^wireframes/', include('wireframes.urls')),
     url(r'accounts/', include('django.contrib.auth.urls')),
 )
