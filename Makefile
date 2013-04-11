@@ -36,19 +36,19 @@ test:
 # Shell
 #
 shell:
-    python apps/manage.py shell_plus --settings=project.settings.local
+	python apps/manage.py shell_plus --settings=project.settings.local
 
 #
 # Run syncdb
 #
 db:
-    python apps/manage.py syncdb --migrate --settings=project.settings.local
+	python apps/manage.py syncdb --migrate --settings=project.settings.local
 
 #
 # Run the devserver
 #
 server:
-    python apps/manage.py runserver --settings=project.settings.local
+	python apps/manage.py runserver --settings=project.settings.local
 
 
 .PHONY : clean static build watch test db server
