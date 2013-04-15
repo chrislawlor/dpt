@@ -29,6 +29,7 @@ DATABASES = {
         'NAME': get_env_var('{{ project_name|upper }}_DATABASE_NAME'),
         'USER': get_env_var('{{ project_name|upper }}_DATABASE_USER'),
         'PASSWORD': get_env_var('{{ project_name|upper }}_DATABASE_PASSWORD'),
+	'HOST': 'localhost',
     }
 }
 
