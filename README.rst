@@ -24,7 +24,7 @@ Getting Started
 ---------------
 
 * Install Django 1.5
-* ``django-admin.py startproject --template https://github.com/chrislawlor/dpt/zipball/master --extension=py,rst YOURPROJECTNAME``
+* ``django-admin.py startproject --template https://github.com/chrisfranklin/dpt/zipball/master --extension=py,rst YOURPROJECTNAME``
 * Follow instructions below.
 
 {% endif %}
