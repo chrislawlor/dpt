@@ -118,11 +118,16 @@ Set the contents as follows::
     #!/bin/bash
     # This hook is run after this virtualenv is activated.
     
-    export {{ project_name|upper }}_DATABASE_NAME="prototype";
-    export {{ project_name|upper }}_DATABASE_USER="";
+    export {{ project_name|upper }}_DATABASE_NAME="{{ project_name}}";
+    export {{ project_name|upper }}_DATABASE_USER="{{ project_name}}";
     export {{ project_name|upper }}_DATABASE_PASSWORD="";
     export {{ project_name|upper }}_SECRET_KEY="";
     export DJANGO_SETTINGS_MODULE="project.settings.local";
+
+The following code will help::
+
+    cdvirtualenv; nano bin/postactivate
+    popd
 
 The last line, which sets ``DJANGO_SETTINGS_MODULE`` to ``project.settings.local``,
 is not strictly necessary, but helpful to avoid the need for the
@@ -143,6 +148,17 @@ you can omit the ``--settings=...`` portion of any ``manage.py`` commands.
 
 For convenience, {{ project_name|capfirst }} provides makefile targets for most
 common ``manage.py`` commands. 
+
+
+Create your Postgres Database
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You must create a Postgres Database to use this project, please run the following::
+
+    su - postgres
+    psql
+    create user george with password 'password';
+    grant all privileges on database money to cashier;
 
 
 Initialize Your Database
