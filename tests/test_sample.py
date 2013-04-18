@@ -8,4 +8,3 @@ class SimpleTest(TestCase):
     def test_addition(self, ):
         result = 2 + 2
         self.assertEqual(4, result)
-    

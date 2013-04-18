@@ -8,12 +8,14 @@ def staging():
     env.activate = 'source /path/to/virtualenv/activate'
     env.user = 'ubuntu'
 
+
 @_contextmanager
 def virtualenv():
     with cd(env.directory):
         with prefix(env.activate):
             yield
-    
+
+
 def checkout_head():
     """
     Checkout the specified revision, or HEAD

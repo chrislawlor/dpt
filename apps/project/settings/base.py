@@ -14,7 +14,8 @@ def get_env_var(varname, default=None):
     except KeyError:
         if default is not None:
             return default
-        raise ImproperlyConfigured("You must set the %s env variable." % varname)
+        msg = "You must set the %s environment variable." % varname
+        raise ImproperlyConfigured(msg)
 
 
 ADMINS = (
@@ -84,7 +85,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.

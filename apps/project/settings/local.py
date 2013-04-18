@@ -1,4 +1,7 @@
+import re
+
 from .base import *
+
 
 DEBUG = TEMPLATE_DEBUG = True
 
@@ -20,14 +23,15 @@ DEBUG_APPS = (
 INTERNAL_IPS = ('127.0.0.1',)
 MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 
+
 # Don't show DDT in the admin
-import re
 def show_toolbar(request):
     uri = request.get_full_path()
     if re.match(r'/admin/', uri):
         return False
     return True
  
+
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': show_toolbar,
     #'INTERCEPT_REDIRECTS': False
