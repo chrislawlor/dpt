@@ -21,7 +21,7 @@ South==0.7.6
 # django-model-utils
 
 # PostgreSQL Database Adapter
-# psycopg2
+psycopg2
 
 # The missing pieces to Django CBV
 # http://django-braces.readthedocs.org/en/latest/index.html
