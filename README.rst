@@ -157,8 +157,9 @@ You must create a Postgres Database to use this project, please run the followin
 
     sudo su - postgres
     psql
-    create user george with password 'password';
-    grant all privileges on database money to cashier;
+    create user {{ project_name}} with password 'password';
+    create database {{ project_name}};
+    grant all privileges on database {{ project_name}} to {{ project_name}};
 
 
 Initialize Your Database
