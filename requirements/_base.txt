@@ -35,6 +35,10 @@ django-crispy-forms
 # http://django-floppyforms.readthedocs.org/en/latest/ 
 django-floppyforms
 
+# Bootstrap django admin
+# https://github.com/riccardo-forina/django-admin-bootstrapped
+django-admin-bootstrapped==0.3.2
+
 # Djrill integrates the Mandrill transactional email service into Django.
 # https://github.com/brack3t/Djrill
 djrill==0.5.0
@@ -46,3 +50,9 @@ python-mandrill-inbound==0.0.1
 # Fiber is a CMS powered by REST
 # https://github.com/ridethepony/django-fiber
 # django-fiber==0.10.2
+
+#######################################################
+#
+# Below are the project specific applications
+#
+#######################################################
