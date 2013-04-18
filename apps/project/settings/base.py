@@ -131,9 +131,14 @@ INSTALLED_APPS = (
     'south',
     'floppyforms',
     'crispy_forms',
+    'djrill',
     
     # local apps
 )
+
+MANDRILL_API_KEY = "get_env_var('{{ project_name|upper }}_MANRILL_API_KEY')"
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
+DJRILL_WEBHOOK_SECRET = "get_env_var('{{ project_name|upper }}_DJRILL_WEBHOOK_SECRET')"
 
 ACCOUNT_ACTIVATION_DAYS = 7
 

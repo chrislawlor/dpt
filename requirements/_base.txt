@@ -34,3 +34,15 @@ django-crispy-forms
 # Adds HTML 5 form attributes to Django forms
 # http://django-floppyforms.readthedocs.org/en/latest/ 
 django-floppyforms
+
+# Djrill integrates the Mandrill transactional email service into Django.
+# https://github.com/brack3t/Djrill
+djrill==0.5.0
+
+# This is a simple API wrapper for Mandrill's inbound email webhook in Python
+# https://github.com/jpadilla/mandrill-inbound-python
+python-mandrill-inbound==0.0.1
+
+# Fiber is a CMS powered by REST
+# https://github.com/ridethepony/django-fiber
+# django-fiber==0.10.2

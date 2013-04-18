@@ -108,6 +108,10 @@ Here is a list of the required environment variables:
 
 * {{ project_name|upper }}_SECRET_KEY
 
+* {{ project_name|upper }}_DJRILL_WEBHOOK_SECRET
+
+* {{ project_name|upper }}_MANDRILL_API_KEY
+
 If you are using virtualenvwrapper, begin editing the ``postactivate`` script as follows::
 
     cdvirtualenv
@@ -121,7 +125,9 @@ Set the contents as follows::
     export {{ project_name|upper }}_DATABASE_NAME="{{ project_name}}";
     export {{ project_name|upper }}_DATABASE_USER="{{ project_name}}";
     export {{ project_name|upper }}_DATABASE_PASSWORD="";
-    export {{ project_name|upper }}_SECRET_KEY="";
+    export {{ project_name|upper }}_SECRET_KEY="PLEASeS33tMe!!#";
+    export {{ project_name|upper }}_DJRILL_WEBHOOK_SECRET="SETME!!";
+    export {{ project_name|upper }}_MANDRILL_API_KEY="SetMe!"; 
     export DJANGO_SETTINGS_MODULE="project.settings.local";
 
 The following code will help::
