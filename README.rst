@@ -24,7 +24,7 @@ Getting Started
 ---------------
 
 * Install Django 1.5
-* ``django-admin.py startproject --template https://github.com/chrislawlor/dpt/zipball/master --extension=py,rst YOURPROJECTNAME``
+* ``django-admin.py startproject --template https://github.com/chrisfranklin/dpt/zipball/master --extension=py,rst YOURPROJECTNAME``
 * Follow instructions below.
 
 {% endif %}
@@ -108,6 +108,10 @@ Here is a list of the required environment variables:
 
 * {{ project_name|upper }}_SECRET_KEY
 
+* {{ project_name|upper }}_DJRILL_WEBHOOK_SECRET
+
+* {{ project_name|upper }}_MANDRILL_API_KEY
+
 If you are using virtualenvwrapper, begin editing the ``postactivate`` script as follows::
 
     cdvirtualenv
@@ -118,11 +122,18 @@ Set the contents as follows::
     #!/bin/bash
     # This hook is run after this virtualenv is activated.
     
-    export {{ project_name|upper }}_DATABASE_NAME="prototype";
-    export {{ project_name|upper }}_DATABASE_USER="";
+    export {{ project_name|upper }}_DATABASE_NAME="{{ project_name}}";
+    export {{ project_name|upper }}_DATABASE_USER="{{ project_name}}";
     export {{ project_name|upper }}_DATABASE_PASSWORD="";
-    export {{ project_name|upper }}_SECRET_KEY="";
+    export {{ project_name|upper }}_SECRET_KEY="PLEASeS33tMe!!#";
+    export {{ project_name|upper }}_DJRILL_WEBHOOK_SECRET="SETME!!";
+    export {{ project_name|upper }}_MANDRILL_API_KEY="SetMe!"; 
     export DJANGO_SETTINGS_MODULE="project.settings.local";
+
+The following code will help::
+
+    cdvirtualenv; nano bin/postactivate
+    popd
 
 The last line, which sets ``DJANGO_SETTINGS_MODULE`` to ``project.settings.local``,
 is not strictly necessary, but helpful to avoid the need for the
@@ -143,6 +154,18 @@ you can omit the ``--settings=...`` portion of any ``manage.py`` commands.
 
 For convenience, {{ project_name|capfirst }} provides makefile targets for most
 common ``manage.py`` commands. 
+
+
+Create your Postgres Database
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You must create a Postgres Database to use this project, please run the following::
+
+    sudo su - postgres
+    psql
+    create user {{ project_name}} with password 'password';
+    create database {{ project_name}};
+    grant all privileges on database {{ project_name}} to {{ project_name}};
 
 
 Initialize Your Database

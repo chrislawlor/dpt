@@ -30,6 +30,8 @@ DATABASES = {
         'NAME': get_env_var('{{ project_name|upper }}_DATABASE_NAME'),
         'USER': get_env_var('{{ project_name|upper }}_DATABASE_USER'),
         'PASSWORD': get_env_var('{{ project_name|upper }}_DATABASE_PASSWORD'),
+        'HOST': 'localhost',
+        'OPTIONS': {'autocommit': True, },
     }
 }
 
@@ -123,16 +125,22 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.admindocs',
     
     # Third party apps
     'south',
-    #'floppyforms',
-    #'crispy_forms',
+    'floppyforms',
+    'crispy_forms',
+    'djrill',
     
     # local apps
 )
+
+MANDRILL_API_KEY = "get_env_var('{{ project_name|upper }}_MANRILL_API_KEY')"
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
+DJRILL_WEBHOOK_SECRET = "get_env_var('{{ project_name|upper }}_DJRILL_WEBHOOK_SECRET')"
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
@@ -156,6 +164,11 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
         }
     },
     'loggers': {
