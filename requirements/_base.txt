@@ -51,6 +51,10 @@ python-mandrill-inbound==0.0.1
 # https://github.com/ridethepony/django-fiber
 # django-fiber==0.10.2
 
+# Update django url patterns to django 1.5
+# https://github.com/futurecolors/django-future-url
+django-future-url
+
 #######################################################
 #
 # Below are the project specific applications
