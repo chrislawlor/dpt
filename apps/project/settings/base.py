@@ -4,6 +4,8 @@ from unipath import Path
 from django.core.exceptions import ImproperlyConfigured
 from django.contrib.messages import constants as message_constants
 
+import dj_database_url
+
 PROJECT_ROOT = Path(__file__).ancestor(4)
 
 
@@ -25,12 +27,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': get_env_var('{{ project_name|upper }}_DATABASE_NAME'),
-        'USER': get_env_var('{{ project_name|upper }}_DATABASE_USER'),
-        'PASSWORD': get_env_var('{{ project_name|upper }}_DATABASE_PASSWORD'),
-    }
+    'default': dj_database_url.parse(get_env_var('{{ project_name|upper }}_DATABASE_URL'))
 }
 
 # Local time zone for this installation. Choices can be found here:

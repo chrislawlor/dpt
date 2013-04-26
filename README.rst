@@ -91,6 +91,15 @@ If you're using virtualenvwrapper, a convenient place to define these
 is in your ``postactivate`` script. Otherwise, they can go in e.g.
 ``~/bash_profile``.
 
+The database connection is defined using a URL instead of separate parameters
+for database name, password, etc. For PostgreSQL, the string will look like::
+
+    postgresql://hostname:port/database?user=USER&password=PASSWORD
+
+For SQLite, use::
+
+    sqlite:////full/path/to/your/database/file.sqlite
+
 You can use a tool like `this secret key generator`_ to generate
 a ``SECRET_KEY``.
 
@@ -100,11 +109,7 @@ a ``SECRET_KEY``.
 
 Here is a list of the required environment variables:
 
-* {{ project_name|upper }}_DATABASE_NAME
-
-* {{ project_name|upper }}_DATABASE_USER
-
-* {{ project_name|upper }}_DATABASE_PASSWORD
+* {{ project_name|upper }}_DATABASE_URL
 
 * {{ project_name|upper }}_SECRET_KEY
 
@@ -118,9 +123,7 @@ Set the contents as follows::
     #!/bin/bash
     # This hook is run after this virtualenv is activated.
     
-    export {{ project_name|upper }}_DATABASE_NAME="prototype";
-    export {{ project_name|upper }}_DATABASE_USER="";
-    export {{ project_name|upper }}_DATABASE_PASSWORD="";
+    export {{ project_name|upper }}_DATABASE_URL="postgresql://hostname:port/database?user=USER&password=PASSWORD";
     export {{ project_name|upper }}_SECRET_KEY="";
     export DJANGO_SETTINGS_MODULE="project.settings.local";
 
@@ -139,7 +142,8 @@ Django's ``manage.py`` script is located in the ``apps`` directory. Any
 
 
 **NOTE:** If you've set the ``DJANGO_SETTINGS_MODULE`` environment variable,
-you can omit the ``--settings=...`` portion of any ``manage.py`` commands.
+you can omit the ``--settings=...`` portion of any ``manage.py`` commands,
+and substitute ``django-admin.py`` for ``manage.py``.
 
 For convenience, {{ project_name|capfirst }} provides makefile targets for most
 common ``manage.py`` commands. 
