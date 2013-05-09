@@ -1,5 +1,6 @@
 <!doctype html>
 {% load i18n %}
+{% load compress %}
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
@@ -20,8 +21,9 @@
   <meta name="viewport" content="width=device-width">
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
+  {% compress css %}
   <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+  {% endcompress %}
   {% block extra_head %}{% endblock %}
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
@@ -93,11 +95,13 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- scripts concatenated and minified via build script -->
+  {% compress js %}
   <script src="{{ STATIC_URL }}vendor/js/jquery-1.9.1.js"></script>
   <script src="{{ STATIC_URL }}js/csrf.js"></script>
   <script src="{{ STATIC_URL }}vendor/bootstrap/js/bootstrap.js"></script>
   <script src="{{ STATIC_URL }}js/plugins.js"></script>
   <script src="{{ STATIC_URL }}js/script.js"></script>
+  {% endcompress %}
   <!-- end scripts -->
   
   {% if not debug %}

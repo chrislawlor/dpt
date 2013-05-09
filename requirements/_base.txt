@@ -8,6 +8,7 @@
 Unipath==0.2.1
 South==0.7.6
 dj-database-url
+django-compressor
 
 #####################################################
 #
