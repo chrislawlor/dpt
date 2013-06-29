@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     
     # Third party apps
     'south',
+    'compressor',
     #'floppyforms',
     #'crispy_forms',
     
