@@ -17,4 +17,4 @@ Sphinx
 
 # For running tests
 coverage
-django-discover-runner
+django-discover-runner==0.4
