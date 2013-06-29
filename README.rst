@@ -126,10 +126,14 @@ Set the contents as follows::
     export {{ project_name|upper }}_DATABASE_URL="postgresql://hostname:port/database?user=USER&password=PASSWORD";
     export {{ project_name|upper }}_SECRET_KEY="";
     export DJANGO_SETTINGS_MODULE="project.settings.local";
+    export PYTHONPATH="/path/to/{{ project_name }}/apps";
 
-The last line, which sets ``DJANGO_SETTINGS_MODULE`` to ``project.settings.local``,
+Setting``DJANGO_SETTINGS_MODULE`` to ``project.settings.local``,
 is not strictly necessary, but helpful to avoid the need for the
 ``--settings`` flag to django management commands.
+
+Similarly, setting ``PYTHONPATH`` lets you use ``django-admin.py`` instead of
+``python manage.py``.
 
 
 Running ``manage.py`` commands
@@ -141,9 +145,9 @@ Django's ``manage.py`` script is located in the ``apps`` directory. Any
     python apps/manage.py --settings=project.settings.local COMMAND
 
 
-**NOTE:** If you've set the ``DJANGO_SETTINGS_MODULE`` environment variable,
-you can omit the ``--settings=...`` portion of any ``manage.py`` commands,
-and substitute ``django-admin.py`` for ``manage.py``.
+**NOTE:** If you've set the ``DJANGO_SETTINGS_MODULE`` environment variable, and
+set your ``PYTHONPATH``, you can omit the ``--settings=...`` portion of any 
+``manage.py`` commands, and substitute ``django-admin.py`` for ``manage.py``.
 
 For convenience, {{ project_name|capfirst }} provides makefile targets for most
 common ``manage.py`` commands. 
