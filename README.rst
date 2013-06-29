@@ -94,7 +94,7 @@ is in your ``postactivate`` script. Otherwise, they can go in e.g.
 The database connection is defined using a URL instead of separate parameters
 for database name, password, etc. For PostgreSQL, the string will look like::
 
-    postgresql://hostname:port/database?user=USER&password=PASSWORD
+    postgresql://username:password@hostname:port/database
 
 For SQLite, use::
 
@@ -123,7 +123,7 @@ Set the contents as follows::
     #!/bin/bash
     # This hook is run after this virtualenv is activated.
     
-    export {{ project_name|upper }}_DATABASE_URL="postgresql://hostname:port/database?user=USER&password=PASSWORD";
+    export {{ project_name|upper }}_DATABASE_URL="postgresql://username:password@hostname:port/database";
     export {{ project_name|upper }}_SECRET_KEY="";
     export DJANGO_SETTINGS_MODULE="project.settings.local";
     export PYTHONPATH="/path/to/{{ project_name }}/apps";
