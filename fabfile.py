@@ -4,17 +4,32 @@ from contextlib import contextmanager as _contextmanager
 
 
 def develop():
+    # FQDN
     env.hosts = ['example.com']
+    
+    # Path to the project root directory (where this file is located)
     env.directory = "/home/username/webapps/{{ project_name }}/src/"
 
+    # Root directory of the virtualenv
     venv_root = "/home/username/.virtualenvs/{{ project_name }}/"
     env.venv_activate = posixpath.join(venv_root, 'bin', 'activate')
+
+    # Path to a script the loads the necessary environment variables.
+    # This script will be explicity 'sourced' whenever the virtualenv is
+    # used by fabric tasks.
     env.env_vars = posixpath.join(venv_root, 'bin', 'postactivate')
 
+    # Which file in 'requirements' to use for this target
+    env.requirements = 'local.txt'
+
+    # Script on the target machine that will restart the application server.
     env.restart_appserver_script = '/home/username/webapps/{{ project_name }}/apache2/bin/restart'
+
+    # Remote user
     env.user = 'username'
 
 
+# Add all Fabric targets here (e.g. 'develop', 'staging', 'production')
 TARGETS = ['develop']
 
 
@@ -58,8 +73,9 @@ def collectstatic():
 
 
 def install_requirements():
+    require('requirements', provided_by=TARGETS)
     with virtualenv():
-        run("pip install -r requirements.txt")
+        run("pip install -r requirements/%(requirements)s.txt" % env)
 
 
 def run_migrations():
