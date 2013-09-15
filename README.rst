@@ -9,7 +9,8 @@ About
 This django project template uses the following:
 
 * Templates based on HTML5 Boilerplate
-* Bootstrap
+* Bootstrap 3.0
+* FontAwesome 3.2.1
 * LESS
 * Sensitive settings loaded from environment variables.
 * Separate requirements for local development and production.
@@ -26,6 +27,23 @@ Getting Started
 * Install Django 1.5
 * ``django-admin.py startproject --template https://github.com/chrislawlor/dpt/zipball/master --extension=py,rst YOURPROJECTNAME``
 * Follow instructions below.
+
+
+Using Bootstrap 2
+----------------------------
+
+DPT includes Boostrap 3.0. If you wish to use an older version, download
+the desired source from GitHub (probably `Bootstrap 2.3.2`_) and:
+
+.. _Bootstrap 2.3.2: https://github.com/twbs/bootstrap/archive/v2.3.2.zip
+
+* Replace ``static/assets/vendor/bootstrap/less/`` with the ``less`` folder
+  from your download.
+
+* Replace ``static/assets/vendor/js/bootstrap.js`` with ``dist/js/bootstrap.js``
+
+* Edit ``static/assets/vendor/bootstrap/less/bootstrap.less``, and replace
+  ``@import "sprites.less";`` with ``@import "../../font-awesome/less/font-awesome.less";``
 
 {% endif %}
 

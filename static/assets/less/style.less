@@ -1,6 +1,51 @@
+
+
 @import "../vendor/bootstrap/less/bootstrap.less";
 @import "mixins.less";
 
+
 body {
     padding-top: 50px;
+}
+
+.first-container {
+  margin-top: 30px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+
+  .form-signin-heading, .checkbox {
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .form-control:focus {
+    z-index: 2;
+  }
+  input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  ul.errorlist {
+    list-style: none;
+    padding-left: 0;
+  }
 }
