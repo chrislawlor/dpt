@@ -9,7 +9,7 @@ About
 This django project template uses the following:
 
 * Templates based on HTML5 Boilerplate
-* Bootstrap 3.0
+* Bootstrap 3.0.1
 * FontAwesome 3.2.1
 * LESS
 * Sensitive settings loaded from environment variables.
