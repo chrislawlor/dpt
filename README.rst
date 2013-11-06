@@ -32,7 +32,7 @@ Getting Started
 Using Bootstrap 2
 ----------------------------
 
-DPT includes Boostrap 3.0. If you wish to use an older version, download
+DPT includes Bootstrap 3.0.1. If you wish to use an older version, download
 the desired source from GitHub (probably `Bootstrap 2.3.2`_) and:
 
 .. _Bootstrap 2.3.2: https://github.com/twbs/bootstrap/archive/v2.3.2.zip
