@@ -42,7 +42,7 @@ shell:
 # Run syncdb
 #
 db:
-	python apps/manage.py syncdb --migrate --settings=project.settings.local
+	python apps/manage.py migrate --settings=project.settings.local
 
 #
 # Run the devserver

@@ -110,7 +110,7 @@ ROOT_URLCONF = 'project.urls'
 WSGI_APPLICATION = 'project.wsgi.application'
 
 TEMPLATE_DIRS = (
-    PROJECT_ROOT.child('templates')
+    PROJECT_ROOT.child('templates'),
 )
 
 INSTALLED_APPS = (
@@ -125,11 +125,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     
     # Third party apps
-    'south',
     'compressor',
-    #'floppyforms',
-    #'crispy_forms',
-    
     # local apps
 )
 

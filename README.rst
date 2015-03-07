@@ -1,6 +1,6 @@
 {% if False %}
 
-Django 1.5 with Boilerplate and Bootstrap Project Template
+Django 1.7 with Boilerplate and Bootstrap Project Template
 ==========================================================
 
 About
@@ -24,7 +24,7 @@ This django project template uses the following:
 Getting Started
 ---------------
 
-* Install Django 1.5
+* Install Django 1.7
 * ``django-admin.py startproject --template https://github.com/chrislawlor/dpt/zipball/master --extension=py,rst YOURPROJECTNAME``
 * Follow instructions below.
 
@@ -173,10 +173,6 @@ common ``manage.py`` commands.
 
 Initialize Your Database
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-{{ project_name|capfirst }} uses South_ to manage database migrations.
-
-.. _South: http://south.aeracode.org/
 
 ::
 
